@@ -1,6 +1,6 @@
 $(function() {
   getCosts();
-  getUserInfo();
+  getCouponInfo();
 });
 
 var shippingCosts = []; userZipcode; orderCost; shipmentCost; discount;
@@ -36,7 +36,7 @@ function getShipmentCost(zipcode, objectCosts) {
   }
 }
 
-function getUserInfo() {
+function getCouponInfo() {
   $('#coupon-form').on ("submit", function(event) {
     event.preventDefault();
   $(".coupon-body").empty();
@@ -64,3 +64,8 @@ function computeCoupon(discountCode){
 function noDiscount() {
   $(".coupon-body").empty().html("<p>No discounts available in your area.</p>")
 }
+
+
+//api
+
+// [{"id":1,"destination":12151,"cost":25.25,"created_at":"2015-11-16T01:12:37.640Z","updated_at":"2015-11-16T01:12:37.640Z"},{"id":2,"destination":56211,"cost":12.25,"created_at":"2015-11-16T01:12:37.643Z","updated_at":"2015-11-16T01:12:37.643Z"},{"id":3,"destination":23569,"cost":32.25,"created_at":"2015-11-16T01:12:37.644Z","updated_at":"2015-11-16T01:12:37.644Z"}]
